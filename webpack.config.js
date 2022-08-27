@@ -5,6 +5,9 @@ module.exports = {
     index: "./src/index.js",
     home: "./src/home.js",
   },
+   // 生成原始代码 方便调试
+  devtool: 'eval-cheap-module-source-map',
+
   output: {
     path: path.resolve(__dirname, "public"),
     filename: "[name].js",
@@ -20,6 +23,7 @@ module.exports = {
         use: {
           loader: "babel-loader",
         },
+        
       },
       {
         test: /\.(css|less)$/,
