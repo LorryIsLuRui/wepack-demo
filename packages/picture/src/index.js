@@ -1,8 +1,8 @@
 import React from "react";
-import { ReactDOM } from "react";
-import Main from "./main";
+import ReactDOM from "react-dom";
+import Main from "./main.jsx";
 
 export default ReactDOM.render(
-    document.querySelector('#root'),
-    <Main />
+    <Main />,
+    document.querySelector('#root')
 )

@@ -6,8 +6,11 @@ module.exports = {
     home: "./src/home.js",
   },
   output: {
-    path: path.resolve(__dirname, "build"),
+    path: path.resolve(__dirname, "public"),
     filename: "[name].js",
+  },
+  resolve: {
+    extensions: ['.js', '.jsx', '.ts', '.tsx'],
   },
   module: {
     rules: [
@@ -18,13 +21,23 @@ module.exports = {
           loader: "babel-loader",
         },
       },
+      {
+        test: /\.(css|less)$/,
+        exclude: /node_modules/,
+        use: [
+          { loader: "style-loader" },
+          {
+            loader: "css-loader",
+          },
+        ],
+      },
     ],
   },
   devServer: {
-    contentBase: path.resolve(__dirname, "public"),
+    static: path.resolve(__dirname, "public"),
     port: 3000,
-    publicPath: "/build/",
+    // publicPath: "/build/",
     open: true,
-    overlay: true,
+    // overlay: true,
   },
 };
