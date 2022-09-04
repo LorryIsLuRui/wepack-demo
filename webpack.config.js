@@ -44,4 +44,8 @@ module.exports = {
     open: true,
     // overlay: true,
   },
+  experiments: {
+    topLevelAwait: true,
+    futureDefaults: true,
+  }
 };
